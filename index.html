@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Octavio Valdez — Backend Python, Data & Mobile Engineer." />
+  <title>Octavio Valdez</title>
+
+  <style>
+    :root{
+      --bg:#0e1116;
+      --card:#141824;
+      --text:#e6e8ec;
+      --muted:#a3a8b3;
+      --line:rgba(255,255,255,.08);
+      --accent:#8b5cf6;
+      --radius:14px;
+      --max:1040px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:48px 20px 80px}
+
+    header{
+      border-bottom:1px solid var(--line);
+      margin-bottom:48px;
+    }
+
+    .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding-bottom:24px;
+    }
+
+    .name{
+      font-size:22px;
+      font-weight:600;
+      letter-spacing:.2px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .dot{
+      width:10px;height:10px;border-radius:99px;
+      background:var(--accent);
+      box-shadow:0 0 0 6px rgba(139,92,246,.12);
+    }
+
+    nav{display:flex;gap:18px;flex-wrap:wrap}
+    nav a{
+      font-size:14px;
+      color:var(--muted);
+    }
+    nav a:hover{color:var(--text)}
+
+    h1{
+      font-size:34px;
+      margin:0 0 16px;
+      font-weight:600;
+      letter-spacing:-.4px;
+    }
+
+    .intro{
+      max-width:70ch;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    /* Photo block (hero) */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap:22px;
+      padding-bottom:44px;
+    }
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+    }
+    .profile-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+    .avatar{
+      width:78px;height:78px;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      flex:0 0 auto;
+      background:rgba(255,255,255,.04);
+    }
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .profile-meta b{
+      display:block;
+      font-size:15px;
+      font-weight:600;
+      margin-bottom:2px;
+    }
+    .profile-meta span{
+      display:block;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .profile-actions{
+      margin-left:auto;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    section{margin-top:64px}
+    h2{
+      font-size:18px;
+      margin:0 0 24px;
+      font-weight:600;
+      letter-spacing:.3px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:20px;
+    }
+
+    .col-12{grid-column:span 12}
+    .col-6{grid-column:span 6}
+
+    @media(max-width:900px){
+      .col-6{grid-column:span 12}
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:20px;
+    }
+
+    .meta{
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+
+    .stack{
+      font-family:var(--mono);
+      font-size:12px;
+      color:var(--muted);
+      margin-top:10px;
+      opacity:.95;
+    }
+
+    ul{
+      padding-left:18px;
+      margin:12px 0 0;
+    }
+
+    li{margin-bottom:8px}
+
+    .project-title{
+      font-size:16px;
+      font-weight:600;
+      margin-bottom:8px;
+    }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      font-size:14px;
+      font-weight:600;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(255,255,255,.18);
+      background:rgba(255,255,255,.05);
+    }
+    .btn.primary{
+      border-color: rgba(139,92,246,.35);
+      background: rgba(139,92,246,.12);
+    }
+    .btn.primary:hover{
+      background: rgba(139,92,246,.18);
+    }
+    .btn.soft{
+      color:var(--muted);
+    }
+    .btn.soft:hover{
+      color:var(--text);
+    }
+
+    .contact-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    footer{
+      margin-top:80px;
+      padding-top:24px;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:12px;
+      font-size:13px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header>
+  <div class="top">
+    <div class="name"><span class="dot"></span>Octavio Valdez</div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <div class="hero">
+    <div>
+      <h1>Backend Python · Data · Mobile Engineer</h1>
+      <p class="intro">
+        I design and build backend systems in Python, data-driven APIs, and cross-platform
+        mobile applications with Expo. My work focuses on clean architecture, maintainable
+        systems, and practical AI integrations that solve real problems.
+      </p>
+    </div>
+
+    <div class="profile-card">
+      <div class="avatar">
+        <img src="assets/octavio.jpeg" alt="Photo of Octavio Valdez" />
+      </div>
+      <div class="profile-meta">
+        <b>Octavio Valdez</b>
+        <span>Python · Expo · Full-Stack</span>
+        <span>Guadalajara, MX · Remote-friendly</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="grid">
+
+    <div class="card col-6">
+      <div class="project-title">Personal Media Gallery App</div>
+      <p>
+        Cross-platform mobile application that allows users to capture, upload,
+        and organize photos and videos in a personal gallery. Designed with a
+        clean UI and smooth media playback, with a structure ready for future
+        features such as theming, sharing, and cloud sync.
+      </p>
+      <ul>
+        <li>Capture photos and videos using the device camera</li>
+        <li>Gallery view with image and video previews</li>
+        <li>Inline video playback inside gallery cards</li>
+        <li>User profiles with editable avatar and username</li>
+        <li>Centralized theming with dynamic color support</li>
+        <li>Cloud storage integration using Firebase</li>
+        <li>Authentication-ready architecture</li>
+        <li>Runs on iOS, Android, and Web</li>
+      </ul>
+      <div class="stack">
+        Expo · React Native · TypeScript · Expo Router · Firebase (Auth/Storage/Firestore) · EAS · Reanimated/Gesture Handler
+      </div>
+    </div>
+
+    <div class="card col-6">
+      <div class="project-title">AI-Driven Spotify Playlist Generator API</div>
+      <p>
+        Backend API that generates Spotify playlists based on a topic provided
+        by the user. The system coordinates multiple specialized AI agents that
+        evaluate rhythm, genre, popularity, and artist relevance to curate tracks.
+      </p>
+      <p>
+        Includes a <b>voice-driven flow</b>: users can speak their topic, and the API
+        turns that intent into playlist criteria and recommendations through agent collaboration
+        (beyond simple rule-based selection).
+      </p>
+      <div class="stack">
+        Python · FastAPI · Spotify API · AGNO · Multi-Agent Systems · Voice input
+      </div>
+    </div>
+
+    <div class="card col-6">
+      <div class="project-title">Academic Performance Data Modeling Study</div>
+      <p>
+        Data modeling and analysis project designed to test the hypothesis:
+        <em>
+          “The effect of AI tool usage on students’ academic performance is
+          moderated by their study habits.”
+        </em>
+      </p>
+      <p>
+        Work includes schema design, variable definition, modeling interaction
+        effects, and preparing datasets for statistical analysis and reporting.
+      </p>
+      <div class="stack">
+        Data Modeling · Hypothesis Testing · Feature Engineering · Python
+      </div>
+    </div>
+
+    <div class="card col-6">
+      <div class="project-title">Personal Finance Management App</div>
+      <p>
+        Containerized finance application with a Streamlit UI and a Flask API,
+        designed for quick setup and clear separation between presentation
+        and business logic.
+      </p>
+      <ul>
+        <li>Dashboard with metrics and charts</li>
+        <li>Transaction creation and listing</li>
+        <li>Credit cards with full or installment purchases</li>
+        <li>Installment calendars and FIFO payment allocation</li>
+        <li>Progress summaries by month and total balance</li>
+      </ul>
+      <p>
+        The API manages accounts, categories, transactions, and cards with
+        simple Bearer-token authentication. SQLite is used by default, with
+        easy portability to Postgres.
+      </p>
+      <div class="stack">
+        Streamlit · Flask · SQLModel · uv · Docker · Docker Compose
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Core Skills</h2>
+
+  <div class="grid">
+    <div class="card col-6">
+      <ul>
+        <li>Python backend development (FastAPI, Flask, AIOHTTP)</li>
+        <li>API design, authentication, and authorization</li>
+        <li>SQL modeling and structured data workflows</li>
+        <li>Dockerized development and deployment</li>
+      </ul>
+    </div>
+
+    <div class="card col-6">
+      <ul>
+        <li>Cross-platform mobile development with Expo</li>
+        <li>React & TypeScript UI development</li>
+        <li>Cloud integrations (AWS, Azure, Firebase)</li>
+        <li>AI system integration and agent-based workflows</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="card col-12">
+    <div class="meta">2025 — Present</div>
+    <div class="project-title">Data Scientist Jr — Derevo</div>
+    <ul>
+      <li>Developed a robust Python API using AIOHTTP to access Azure services (CosmosDB, Blob Storage, Key Vault).</li>
+      <li>Integrated Microsoft Authentication and JWT for secure access and role-based authorization.</li>
+      <li>Designed authentication middleware to enforce API security policies.</li>
+      <li>Implemented JSON schema-based configuration versioning in a multi-agent AI environment.</li>
+      <li>Built APIs to dynamically create, update, and manage AI agents.</li>
+      <li>Engineered versioning and templating for agent contexts, enabling rollback and template-based creation.</li>
+      <li>Integrated secure management of Azure Key Vault secrets.</li>
+      <li>Authored internal documentation for deploying Microsoft Teams bots.</li>
+      <li>Designed React dashboards and interfaces using TypeScript.</li>
+    </ul>
+  </div>
+
+  <div class="card col-12" style="margin-top:20px">
+    <div class="meta">2025 — Present</div>
+    <div class="project-title">Full-Stack Developer — Freelance & Personal Projects</div>
+    <ul>
+      <li>Designed and shipped full-stack prototypes combining Python APIs and Expo mobile apps.</li>
+      <li>Built containerized systems for reproducible local and cloud environments.</li>
+      <li>Focused on data-driven features, maintainable architecture, and real-world usability.</li>
+    </ul>
+  </div>
+
+  <div class="card col-12" style="margin-top:20px">
+    <div class="meta">2022 — 2025</div>
+    <div class="project-title">Software Developer / Data Engineer — INTEL Corporation</div>
+    <ul>
+      <li>Developed front-end and back-end components using Python, including UI elements and dynamic forms.</li>
+      <li>Deployed large language models in Docker containers on AWS EC2 using Hugging Face TGI and vLLM.</li>
+      <li>Built and maintained FastAPI and Flask APIs to interact with cloud-hosted LLMs.</li>
+      <li>Stored and managed structured LLM responses in SQL databases.</li>
+      <li>Integrated and documented EMON (Event Monitor) data collection pipelines for performance analysis.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="intro">
+    Open to backend Python, data, and full-stack roles.
+  </p>
+
+  <div class="contact-actions">
+    <a class="btn primary" href="mailto:octavio7valdez@gmail.com">Email</a>
+    <a class="btn" href="https://github.com/Loloctavio" target="_blank" rel="noreferrer">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/octavio-valdez-fonseca-6a374226a" target="_blank" rel="noreferrer">LinkedIn</a>
+  </div>
+</section>
+
+<footer>
+  <span>© <span id="year"></span> Octavio Valdez</span>
+  <span>Backend · Data · Mobile</span>
+</footer>
+
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
