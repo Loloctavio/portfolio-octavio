@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Octavio Valdez — Backend Python, Data & Mobile Engineer." />
+  <meta
+    name="description"
+    content="Octavio Valdez — Backend & AI Systems Engineer building scalable APIs, AI applications, and cross-platform mobile experiences."
+  />
   <title>Octavio Valdez</title>
 
   <style>
@@ -21,6 +24,11 @@
     }
 
     *{box-sizing:border-box}
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
       font-family:var(--sans);
@@ -55,16 +63,25 @@
     }
 
     .dot{
-      width:10px;height:10px;border-radius:99px;
+      width:10px;
+      height:10px;
+      border-radius:99px;
       background:var(--accent);
       box-shadow:0 0 0 6px rgba(139,92,246,.12);
     }
 
-    nav{display:flex;gap:18px;flex-wrap:wrap}
+    nav{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
     nav a{
       font-size:14px;
       color:var(--muted);
+      transition:color .15s ease;
     }
+
     nav a:hover{color:var(--text)}
 
     h1{
@@ -72,6 +89,7 @@
       margin:0 0 16px;
       font-weight:600;
       letter-spacing:-.4px;
+      line-height:1.2;
     }
 
     .intro{
@@ -80,16 +98,18 @@
       font-size:17px;
     }
 
-    /* Photo block (hero) */
     .hero{
       display:grid;
       grid-template-columns: 1.35fr .65fr;
       gap:22px;
       padding-bottom:44px;
+      align-items:start;
     }
+
     @media(max-width:900px){
       .hero{grid-template-columns:1fr}
     }
+
     .profile-card{
       background:var(--card);
       border:1px solid var(--line);
@@ -99,40 +119,39 @@
       gap:14px;
       align-items:center;
     }
+
     .avatar{
-      width:78px;height:78px;
+      width:78px;
+      height:78px;
       border-radius:16px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.12);
       flex:0 0 auto;
       background:rgba(255,255,255,.04);
     }
+
     .avatar img{
       width:100%;
       height:100%;
       object-fit:cover;
       display:block;
     }
+
     .profile-meta b{
       display:block;
       font-size:15px;
       font-weight:600;
       margin-bottom:2px;
     }
+
     .profile-meta span{
       display:block;
       font-size:13px;
       color:var(--muted);
     }
-    .profile-actions{
-      margin-left:auto;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
 
     section{margin-top:64px}
+
     h2{
       font-size:18px;
       margin:0 0 24px;
@@ -158,6 +177,7 @@
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:20px;
+      height:100%;
     }
 
     .meta{
@@ -172,6 +192,7 @@
       color:var(--muted);
       margin-top:10px;
       opacity:.95;
+      line-height:1.7;
     }
 
     ul{
@@ -187,7 +208,6 @@
       margin-bottom:8px;
     }
 
-    /* Buttons */
     .btn{
       display:inline-flex;
       align-items:center;
@@ -200,26 +220,23 @@
       color:var(--text);
       font-size:14px;
       font-weight:600;
-      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+      transition:transform .15s ease,border-color .15s ease,background .15s ease;
       white-space:nowrap;
     }
+
     .btn:hover{
       transform:translateY(-1px);
       border-color:rgba(255,255,255,.18);
       background:rgba(255,255,255,.05);
     }
+
     .btn.primary{
-      border-color: rgba(139,92,246,.35);
-      background: rgba(139,92,246,.12);
+      border-color:rgba(139,92,246,.35);
+      background:rgba(139,92,246,.12);
     }
+
     .btn.primary:hover{
-      background: rgba(139,92,246,.18);
-    }
-    .btn.soft{
-      color:var(--muted);
-    }
-    .btn.soft:hover{
-      color:var(--text);
+      background:rgba(139,92,246,.18);
     }
 
     .contact-actions{
@@ -244,220 +261,221 @@
 </head>
 
 <body>
-<div class="wrap">
+  <div class="wrap">
 
-<header>
-  <div class="top">
-    <div class="name"><span class="dot"></span>Octavio Valdez</div>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
+    <header>
+      <div class="top">
+        <div class="name"><span class="dot"></span>Octavio Valdez</div>
+        <nav>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
 
-  <div class="hero">
-    <div>
-      <h1>Backend Python · Data · Mobile Engineer</h1>
+      <div class="hero">
+        <div>
+          <h1>Backend & AI Systems Engineer</h1>
+          <p class="intro">
+            I build scalable backend systems, AI-powered applications, and cross-platform mobile
+            experiences. My work focuses on Python APIs, LLM-driven systems, and cloud-native
+            applications that integrate real-world services such as Spotify, Firebase, and Azure.
+            I enjoy designing reliable architectures, orchestrating intelligent agents, and shipping
+            production-ready software across web and mobile platforms.
+          </p>
+        </div>
+
+        <div class="profile-card">
+          <div class="avatar">
+            <img src="assets/octavio.jpeg" alt="Photo of Octavio Valdez" />
+          </div>
+          <div class="profile-meta">
+            <b>Octavio Valdez</b>
+            <span>Backend · AI Systems · Full-Stack</span>
+            <span>Guadalajara, MX · Remote-friendly</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="grid">
+
+        <div class="card col-6">
+          <div class="project-title">Memories Archive — Shared Photo App</div>
+          <p>
+            Cross-platform mobile application that allows users to privately share and store
+            photos with a partner or friend. Built using Expo and Firebase to provide secure
+            authentication, cloud storage, and real-time synchronization.
+          </p>
+          <ul>
+            <li>Private shared gallery between two users</li>
+            <li>Photo uploads with Firebase Storage</li>
+            <li>Secure authentication with Firebase Auth</li>
+            <li>Real-time data using Firestore</li>
+            <li>Push notifications using Firebase Functions</li>
+            <li>Automated CI/CD using GitHub Actions and Expo EAS builds</li>
+            <li>Continuous dev and production releases</li>
+          </ul>
+          <div class="stack">
+            Expo · React Native · JavaScript · Firebase (Auth / Firestore / Storage / Functions) · GitHub Actions · EAS
+          </div>
+        </div>
+
+        <div class="card col-6">
+          <div class="project-title">AuraCue — AI Playlist Generator</div>
+          <p>
+            AI-powered application that generates personalized Spotify playlists from natural
+            language prompts. The system orchestrates multiple AI agents to collaboratively
+            select songs and verify them against Spotify’s catalog.
+          </p>
+          <ul>
+            <li>Multi-agent orchestration using Agno and OpenAI</li>
+            <li>Playlist generation based on natural language prompts</li>
+            <li>Spotify API integration for song verification</li>
+            <li>Export generated playlists directly to user Spotify accounts</li>
+            <li>Backend built with FastAPI</li>
+            <li>Automated deployments via Railway and Vercel</li>
+          </ul>
+          <div class="stack">
+            Python · FastAPI · Agno · OpenAI API · Spotify API · React · Railway · Vercel · CI/CD
+          </div>
+        </div>
+
+        <div class="card col-6">
+          <div class="project-title">Academic Performance Data Modeling Study</div>
+          <p>
+            Data modeling and analysis project designed to evaluate how AI tool dependency
+            relates to student academic performance and conceptual understanding.
+          </p>
+          <p>
+            The work included schema design, variable definition, preparation of datasets for
+            analysis, and interpretation of relationships between study habits, AI usage, and
+            improvement rates.
+          </p>
+          <div class="stack">
+            Data Modeling · SQL · Python · Hypothesis Testing · Statistical Analysis
+          </div>
+        </div>
+
+        <div class="card col-6">
+          <div class="project-title">Personal Finance Management App</div>
+          <p>
+            Containerized finance application with a Streamlit interface and Flask API,
+            designed to separate business logic from presentation while keeping the setup
+            lightweight and reproducible.
+          </p>
+          <ul>
+            <li>Dashboard with metrics and charts</li>
+            <li>Transaction, category, and account tracking</li>
+            <li>Credit card purchases and installment handling</li>
+            <li>Monthly progress summaries and balance reporting</li>
+            <li>Portable local setup with Docker Compose</li>
+          </ul>
+          <div class="stack">
+            Streamlit · Flask · SQLModel · SQLite · Docker · Docker Compose · Python
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Core Skills</h2>
+
+      <div class="grid">
+        <div class="card col-6">
+          <ul>
+            <li>Python backend development (FastAPI, Flask, AIOHTTP)</li>
+            <li>REST API design and asynchronous services</li>
+            <li>AI systems with LLM APIs and multi-agent orchestration</li>
+            <li>Database design (PostgreSQL, MySQL, MongoDB, Firebase)</li>
+          </ul>
+        </div>
+
+        <div class="card col-6">
+          <ul>
+            <li>React web applications and UI development</li>
+            <li>Cross-platform mobile apps with Expo</li>
+            <li>Cloud platforms: AWS, Azure, Railway, Vercel</li>
+            <li>CI/CD pipelines with GitHub Actions and automated deployments</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="card col-12">
+        <div class="meta">2025 — Present</div>
+        <div class="project-title">Junior Data Scientist / AI Engineer — Derevo</div>
+        <ul>
+          <li>Developed a robust Python API using AIOHTTP to access Azure services such as CosmosDB, Blob Storage, and Key Vault.</li>
+          <li>Integrated Microsoft Authentication and JWT for secure access and role-based authorization.</li>
+          <li>Designed authentication middleware to enforce API security policies.</li>
+          <li>Implemented JSON schema-based configuration versioning in a multi-agent AI environment.</li>
+          <li>Built APIs to dynamically create, update, delete, and manage AI agents.</li>
+          <li>Engineered context versioning and templating mechanisms for rollback and template-based creation.</li>
+          <li>Integrated secure Azure Key Vault secret management for agent configuration workflows.</li>
+          <li>Collaborated with clients to evaluate needs and align product capabilities with business objectives.</li>
+          <li>Built Python utilities to add temporal awareness to agent data retrieval and interpretation.</li>
+          <li>Implemented automated backup generation for agent context files during rediscovery processes.</li>
+          <li>Refined agent prompts to support relevant in-scope conversational suggestions.</li>
+          <li>Implemented access-control measures to define which users can interact with specific agents.</li>
+        </ul>
+      </div>
+
+      <div class="card col-12" style="margin-top:20px">
+        <div class="meta">2024 — 2025</div>
+        <div class="project-title">Software Engineer Student Worker — Intel Corporation</div>
+        <ul>
+          <li>Developed backend features using Python, Flask, and REST APIs to support engineering workflows.</li>
+          <li>Built APIs to support LLMs deployed with Hugging Face TGI and vLLM in Docker containers on AWS EC2.</li>
+          <li>Created React UI components for improved data input and result visualization.</li>
+          <li>Implemented backend logic to store structured AI outputs in SQL databases.</li>
+          <li>Integrated EMON for system performance analytics and profiling workflows.</li>
+          <li>Built AI agents using orchestration across multiple LLM providers to improve automation capabilities.</li>
+        </ul>
+      </div>
+
+      <div class="card col-12" style="margin-top:20px">
+        <div class="meta">2023</div>
+        <div class="project-title">Data Transformation Intern — Derevo</div>
+        <ul>
+          <li>Wrote optimized SQL queries for large Azure datasets to improve query performance.</li>
+          <li>Created automated ETL pipelines for streamlined data ingestion and processing.</li>
+          <li>Improved data quality through validation checks and transformation workflows.</li>
+          <li>Managed Azure SQL environments to support reliability and scalability.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
       <p class="intro">
-        I design and build backend systems in Python, data-driven APIs, and cross-platform
-        mobile applications with Expo. My work focuses on clean architecture, maintainable
-        systems, and practical AI integrations that solve real problems.
+        Open to backend, AI systems, and full-stack software engineering opportunities.
       </p>
-    </div>
 
-    <div class="profile-card">
-      <div class="avatar">
-        <img src="assets/octavio.jpeg" alt="Photo of Octavio Valdez" />
+      <div class="contact-actions">
+        <a class="btn primary" href="mailto:octavio7valdez@gmail.com">Email</a>
+        <a class="btn" href="https://github.com/Loloctavio" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/octavio-valdez-fonseca-6a374226a" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
-      <div class="profile-meta">
-        <b>Octavio Valdez</b>
-        <span>Python · Expo · Full-Stack</span>
-        <span>Guadalajara, MX · Remote-friendly</span>
-      </div>
-    </div>
-  </div>
-</header>
+    </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="grid">
-
-    <div class="card col-6">
-      <div class="project-title">Personal Media Gallery App</div>
-      <p>
-        Cross-platform mobile application that allows users to capture, upload,
-        and organize photos and videos in a personal gallery. Designed with a
-        clean UI and smooth media playback, with a structure ready for future
-        features such as theming, sharing, and cloud sync.
-      </p>
-      <ul>
-        <li>Capture photos and videos using the device camera</li>
-        <li>Gallery view with image and video previews</li>
-        <li>Inline video playback inside gallery cards</li>
-        <li>User profiles with editable avatar and username</li>
-        <li>Centralized theming with dynamic color support</li>
-        <li>Cloud storage integration using Firebase</li>
-        <li>Authentication-ready architecture</li>
-        <li>Runs on iOS, Android, and Web</li>
-      </ul>
-      <div class="stack">
-        Expo · React Native · TypeScript · Expo Router · Firebase (Auth/Storage/Firestore) · EAS · Reanimated/Gesture Handler
-      </div>
-    </div>
-
-    <div class="card col-6">
-      <div class="project-title">AI-Driven Spotify Playlist Generator API</div>
-      <p>
-        Backend API that generates Spotify playlists based on a topic provided
-        by the user. The system coordinates multiple specialized AI agents that
-        evaluate rhythm, genre, popularity, and artist relevance to curate tracks.
-      </p>
-      <p>
-        Includes a <b>voice-driven flow</b>: users can speak their topic, and the API
-        turns that intent into playlist criteria and recommendations through agent collaboration
-        (beyond simple rule-based selection).
-      </p>
-      <div class="stack">
-        Python · FastAPI · Spotify API · AGNO · Multi-Agent Systems · Voice input
-      </div>
-    </div>
-
-    <div class="card col-6">
-      <div class="project-title">Academic Performance Data Modeling Study</div>
-      <p>
-        Data modeling and analysis project designed to test the hypothesis:
-        <em>
-          “The effect of AI tool usage on students’ academic performance is
-          moderated by their study habits.”
-        </em>
-      </p>
-      <p>
-        Work includes schema design, variable definition, modeling interaction
-        effects, and preparing datasets for statistical analysis and reporting.
-      </p>
-      <div class="stack">
-        Data Modeling · Hypothesis Testing · Feature Engineering · Python
-      </div>
-    </div>
-
-    <div class="card col-6">
-      <div class="project-title">Personal Finance Management App</div>
-      <p>
-        Containerized finance application with a Streamlit UI and a Flask API,
-        designed for quick setup and clear separation between presentation
-        and business logic.
-      </p>
-      <ul>
-        <li>Dashboard with metrics and charts</li>
-        <li>Transaction creation and listing</li>
-        <li>Credit cards with full or installment purchases</li>
-        <li>Installment calendars and FIFO payment allocation</li>
-        <li>Progress summaries by month and total balance</li>
-      </ul>
-      <p>
-        The API manages accounts, categories, transactions, and cards with
-        simple Bearer-token authentication. SQLite is used by default, with
-        easy portability to Postgres.
-      </p>
-      <div class="stack">
-        Streamlit · Flask · SQLModel · uv · Docker · Docker Compose
-      </div>
-    </div>
+    <footer>
+      <span>© <span id="year"></span> Octavio Valdez</span>
+      <span>Backend · AI Systems · Full-Stack</span>
+    </footer>
 
   </div>
-</section>
 
-<section id="skills">
-  <h2>Core Skills</h2>
-
-  <div class="grid">
-    <div class="card col-6">
-      <ul>
-        <li>Python backend development (FastAPI, Flask, AIOHTTP)</li>
-        <li>API design, authentication, and authorization</li>
-        <li>SQL modeling and structured data workflows</li>
-        <li>Dockerized development and deployment</li>
-      </ul>
-    </div>
-
-    <div class="card col-6">
-      <ul>
-        <li>Cross-platform mobile development with Expo</li>
-        <li>React & TypeScript UI development</li>
-        <li>Cloud integrations (AWS, Azure, Firebase)</li>
-        <li>AI system integration and agent-based workflows</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <h2>Experience</h2>
-
-  <div class="card col-12">
-    <div class="meta">2025 — Present</div>
-    <div class="project-title">Data Scientist Jr — Derevo</div>
-    <ul>
-      <li>Developed a robust Python API using AIOHTTP to access Azure services (CosmosDB, Blob Storage, Key Vault).</li>
-      <li>Integrated Microsoft Authentication and JWT for secure access and role-based authorization.</li>
-      <li>Designed authentication middleware to enforce API security policies.</li>
-      <li>Implemented JSON schema-based configuration versioning in a multi-agent AI environment.</li>
-      <li>Built APIs to dynamically create, update, and manage AI agents.</li>
-      <li>Engineered versioning and templating for agent contexts, enabling rollback and template-based creation.</li>
-      <li>Integrated secure management of Azure Key Vault secrets.</li>
-      <li>Authored internal documentation for deploying Microsoft Teams bots.</li>
-      <li>Designed React dashboards and interfaces using TypeScript.</li>
-    </ul>
-  </div>
-
-  <div class="card col-12" style="margin-top:20px">
-    <div class="meta">2025 — Present</div>
-    <div class="project-title">Full-Stack Developer — Freelance & Personal Projects</div>
-    <ul>
-      <li>Designed and shipped full-stack prototypes combining Python APIs and Expo mobile apps.</li>
-      <li>Built containerized systems for reproducible local and cloud environments.</li>
-      <li>Focused on data-driven features, maintainable architecture, and real-world usability.</li>
-    </ul>
-  </div>
-
-  <div class="card col-12" style="margin-top:20px">
-    <div class="meta">2022 — 2025</div>
-    <div class="project-title">Software Developer / Data Engineer — INTEL Corporation</div>
-    <ul>
-      <li>Developed front-end and back-end components using Python, including UI elements and dynamic forms.</li>
-      <li>Deployed large language models in Docker containers on AWS EC2 using Hugging Face TGI and vLLM.</li>
-      <li>Built and maintained FastAPI and Flask APIs to interact with cloud-hosted LLMs.</li>
-      <li>Stored and managed structured LLM responses in SQL databases.</li>
-      <li>Integrated and documented EMON (Event Monitor) data collection pipelines for performance analysis.</li>
-    </ul>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p class="intro">
-    Open to backend Python, data, and full-stack roles.
-  </p>
-
-  <div class="contact-actions">
-    <a class="btn primary" href="mailto:octavio7valdez@gmail.com">Email</a>
-    <a class="btn" href="https://github.com/Loloctavio" target="_blank" rel="noreferrer">GitHub</a>
-    <a class="btn" href="https://www.linkedin.com/in/octavio-valdez-fonseca-6a374226a" target="_blank" rel="noreferrer">LinkedIn</a>
-  </div>
-</section>
-
-<footer>
-  <span>© <span id="year"></span> Octavio Valdez</span>
-  <span>Backend · Data · Mobile</span>
-</footer>
-
-</div>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
